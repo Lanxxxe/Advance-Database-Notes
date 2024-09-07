@@ -1,7 +1,7 @@
 
 ## Introduction to  MYSQL Join Clauses
 
-MySQL supports the following `JOIN` syntax for the _`table_references`_ part of [`SELECT`](https://dev.mysql.com/doc/refman/8.4/en/select.html "15.2.13 SELECT Statement") statements and multiple-table [`DELETE`](https://dev.mysql.com/doc/refman/8.4/en/delete.html "15.2.2 DELETE Statement") and [`UPDATE`](https://dev.mysql.com/doc/refman/8.4/en/update.html "15.2.17 UPDATE Statement") statements:
+MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SELECT`](https://dev.mysql.com/doc/refman/8.4/en/select.html "15.2.13 SELECT Statement") statements and multiple-table [`DELETE`](https://dev.mysql.com/doc/refman/8.4/en/delete.html "15.2.2 DELETE Statement") and [`UPDATE`](https://dev.mysql.com/doc/refman/8.4/en/update.html "15.2.17 UPDATE Statement") statements:
 
 - A **table reference** is also known as a join expression.
 - A table reference (when it refers to a partitioned table) may contain a `PARTITION` clause, including a list of comma-separated partitions, subpartitions, or both. This option follows the name of the table and precedes any alias declaration. The effect of this option is that rows are selected only from the listed partitions or subpartitions.
@@ -23,17 +23,24 @@ MySQL supports the following `JOIN` syntax for the _`table_references`_ part
 
 ## Left Join Clause
 
+ - The `LEFT JOIN` keyword returns all records from the left table (table1), and the matching records (if any) from the right table (table2).
 
+[<img src="images/left-join.png" />](left-join.png)
 ## Right Join Clause
 
+- The `RIGHT JOIN` keyword returns all records from the right table (table2), and the matching records (if any) from the left table (table1).
 
+[<img src="images/right-join.png" />](right-join.png)
 
 ## Cross Join Clause
 
+- The `CROSS JOIN` keyword returns all records from both tables (table1 and table2).
 
+[<img src="images/full-outer-join.png" />](full-outer-join.png)
 
 ## Self Joins
 
+- A self join is a regular join, but the table is joined with itself.
 
 ## MySQL Subquery
 
