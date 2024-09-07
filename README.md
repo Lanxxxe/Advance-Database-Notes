@@ -10,8 +10,6 @@ This repository contains notes and resources for **IT 313 – Advanced Database 
 - [Course Topics](#course-topics)
 - [Resources](#resources)
 - [How to Use This Repository](#how-to-use-this-repository)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
