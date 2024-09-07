@@ -13,7 +13,7 @@ MySQL supports the following `JOIN` syntax for the _`table_references`_ part
 
  - `(INNER) JOIN`: Returns records that have matching values in both tables
 
-	![[Advance Database Management/images/inner-join.png]]
+	![[./images/inner-join.png]]
 
 | Order ID |     |     |
 | -------- | --- | --- |
