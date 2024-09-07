@@ -37,6 +37,7 @@ The topics covered in this course include:
 	 https://www.tutorialrepublic.com/sql-tutorial/
 	 https://www.w3resource.com/mysql/mysql-tutorials.php
 	 https://dev.mysql.com/doc/refman/8.4/en/sql-statements.html
+	 https://sqlbolt.com/lesson/introduction
 
 ## SQL Games
 
