@@ -5,9 +5,20 @@ MySQL supports the following `JOIN` syntax for the _`table_references`_ part
 
 - A **table reference** is also known as a join expression.
 - A table reference (when it refers to a partitioned table) may contain a `PARTITION` clause, including a list of comma-separated partitions, subpartitions, or both. This option follows the name of the table and precedes any alias declaration. The effect of this option is that rows are selected only from the listed partitions or subpartitions.
+
+## Join Clause
+- A `JOIN` clause is used to combine rows from two or more tables, based on a related column between them.
+
 ## Inner Join Clause
 
-	- A `JOIN` clause is used to combine rows from two or more tables, based on a related column between them.
+ - `(INNER) JOIN`: Returns records that have matching values in both tables
+
+	![[inner-join.png]]
+
+| Order ID |     |     |
+| -------- | --- | --- |
+|          |     |     |
+
 ## Left Join Clause
 
 

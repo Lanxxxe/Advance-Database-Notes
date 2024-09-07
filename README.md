@@ -19,7 +19,7 @@ This course builds on fundamental database knowledge to explore advanced systems
 
 The topics covered in this course include:
 
-- **Chapter 1: Joins and Subquery**
+- [**Chapter 1: Joins and Subquery**]()
 - **Chapter 2: Functions (Built-In)**
 - **Chapter 3: Views**
 - **Chapter 4: Stored Procedure**
