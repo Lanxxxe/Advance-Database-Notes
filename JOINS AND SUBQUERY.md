@@ -66,7 +66,6 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 
 
 
-
 References
 - https://dev.mysql.com/doc/refman/8.4/en/join.html
 - https://www.w3schools.com/sql/sql_join.asp
