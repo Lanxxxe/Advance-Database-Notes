@@ -131,9 +131,15 @@ Difference between INNER and CROSS Join
 		- **Result Set:** Includes only the rows where the join condition is satisfied in both tables.
 		- **Usage Scenario:** When you need to retrieve related data that exists in both tables.
 		  
+	 *Use case*
+		 - used when you need to combine rows based on a related column between tables, ensuring that only matching records are returned.
+		  
 - A **CROSS JOIN** returns the Cartesian product of the two tables involved, meaning it combines each row of the first table with every row of the second table.
 	*Characteristics:*
 		-  **No Condition-Based:** Does not require a join condition; it simply pairs all rows from both tables.
 		- **Result Set:** Includes all possible combinations of rows from the two tables.
 		- **Usage Scenario:** When you need to generate all possible combinations, such as creating test data or pairing every item with every other item.
+		  
+	 *Use Case*
+		 - used when you need every possible combination of rows from the involved tables, without considering any relationship between them.
 

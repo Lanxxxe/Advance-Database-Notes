@@ -102,5 +102,22 @@ GROUP BY author_name;
 
 
 
+-- For example on Difference between INNER and CROSS Join 
+SELECT Books.book_title, Authors.author_name
+FROM Books
+INNER JOIN Authors ON Books.author_id = Authors.author_id;
+
+-- Scenario Outcome:
+-- Books without an Author: If a book does not have an author_id that matches any author_id in the Authors table, it will not appear in the result.
+-- Authors without Books: Authors who haven't written any books will also be excluded from the result.
+
+
+SELECT Books.book_title, Authors.author_name
+FROM Books
+CROSS JOIN Authors;
+
+-- Scenario Outcome:
+-- All Combinations: Every book will be paired with every author, regardless of whether the author actually wrote the book.
+-- Result Size: If there are 10 books and 5 authors, the result will have 10 × 5 = 50 rows.
 
 
