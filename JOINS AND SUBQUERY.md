@@ -65,6 +65,16 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 
 	SELECT * FROM t1 ...` is the _outer query_ (or _outer statement_), and `(SELECT column1 FROM t2)` is the _subquery_. We say that the subquery is _nested_ within the outer query, and in fact it is possible to nest subqueries within other subqueries, to a considerable depth. A subquery must always appear within parentheses.
 
+- A subquery in the `WHERE` clause is used to filter the rows returned by the main query based on the result of the subquery. The result of the subquery is used to compare or match rows in the outer query.
+
+#### **Use Case:**
+
+This is useful when you need to filter data from the main table based on a condition that requires information from another table or set of rows.
+
+#### **Importance:**
+
+This type of subquery simplifies querying complex data conditions without needing to join multiple tables or write multiple queries manually.
+
 
 ## Subquery with ALL and ANY keywords
 
@@ -80,12 +90,38 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 ```
 	operand comparison_operator ANY (subquery)
 ```
+
+
+#### **Explanation:**
+
+- **`ALL`**: Compares a value with **all** the results from the subquery. The outer query returns rows where the condition is true for **every** value returned by the subquery.
+- **`ANY`**: Compares a value with **any** of the results from the subquery. The outer query returns rows where the condition is true for **at least one** value from the subquery.
+#### **Use Case:**
+
+- **`ALL`**: Used when you want to compare against the highest/lowest value in a list.
+- **`ANY`**: Used when you want to match **at least one** of the values in a list, commonly when the comparison doesn’t need to be strict.
+
+#### **Importance:**
+
+These keywords allow fine control over comparisons, enabling developers to query datasets flexibly.
+
+
 ## Corellated Subquery
 
 - A correlated subquery is a subquery that contains a reference to a table (in the parent query) that also appears in the outer query. MySQL evaluates from inside to outside.
+- A **correlated subquery** is a subquery that depends on the outer query. The subquery is re-executed for every row in the outer query, as it references a column from the outer query.
 - A _correlated subquery_ is a subquery that contains a reference to a table that also appears in the outer query.
 
 	[<img src="images/mysql-corellated-subquery.png" />](mysql-corellated-subquery.png)
+
+
+#### **Use Case:**
+
+Correlated subqueries are useful when you need to compare each row in the outer query against a dynamically calculated value based on that row.
+
+#### **Importance:**
+
+- Correlated subqueries can be powerful but may impact performance because they are executed repeatedly, once for each row in the outer query. They are essential when querying related data in a dependent fashion.
 
 ## Exists and Not Exists
 
@@ -100,6 +136,20 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 
 
 - NOT EXISTS subquery almost always contains correlations.
+
+#### **Explanation:**
+
+- **`EXISTS`**: Returns `TRUE` if the subquery returns **at least one row**. It's used to check the existence of rows in another table.
+- **`NOT EXISTS`**: Returns `TRUE` if the subquery **does not return any rows**.
+
+#### **Use Case:**
+
+- **`EXISTS`**: Used when you only care about the existence of matching records, not the actual data returned by the subquery.
+- **`NOT EXISTS`**: Used when you want to find records in one table that do not have related records in another table.
+
+#### **Importance:**
+
+- These are critical when performing checks for data existence and are more efficient than counting or retrieving data when all you need is to know whether records exist or not.
 ## Subquery in the SELECT and FROM clause
 
 - Subqueries work in a SELECT statement's FROM clause. 
@@ -109,6 +159,17 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 ```
 
 - Every table in a FROM clause must have a name, therefore the [AS] name clause is mandatory. Any columns in the subquery select list must have unique names.
+- A subquery in the `SELECT` clause allows you to include calculated data or lookups from other tables directly in the result set.
+- A subquery in the `FROM` clause acts as a **derived table**. It generates a temporary result set that can be joined with other tables in the outer query.
+
+#### **Use Case:**
+
+- **Subquery in `SELECT`**: Used when you need to fetch related data from another table without doing an explicit join.
+- **Subquery in `FROM`**: Used when you need to treat the result of a subquery as a table in the outer query, typically for complex aggregations or joins.
+
+#### **Importance:**
+
+These types of subqueries provide powerful ways to break down complex queries by retrieving or calculating data in steps.
 
 
 References
@@ -143,3 +204,13 @@ Difference between INNER and CROSS Join
 	 *Use Case*
 		 - used when you need every possible combination of rows from the involved tables, without considering any relationship between them.
 
+
+### **Summary of Differences:**
+
+|**Type**|**Explanation**|**Use Case**|**Importance**|
+|---|---|---|---|
+|**Subquery in WHERE Clause**|Filters rows based on a subquery result|Dynamic filtering based on related data|Allows complex filtering without joins|
+|**Subquery with ALL/ANY**|Compares a value to all or any values from the subquery|Flexible comparisons between multiple values|Helps in finding rows with comparisons across sets|
+|**Correlated Subquery**|Subquery depends on outer query; re-executed for each row|Querying based on per-row conditions|Essential for per-row dynamic comparisons|
+|**EXISTS/NOT EXISTS**|Checks for the presence/absence of rows in the subquery|Checking for existence of related records|Efficient for presence checks without fetching data|
+|**Subquery in SELECT/FROM**|Subquery used for calculated fields or as a derived table|Fetch related data directly or treat a query as a table|Enables complex calculations and table-like subqueries|
