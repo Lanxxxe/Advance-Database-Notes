@@ -83,6 +83,7 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 ## Corellated Subquery
 
 - A correlated subquery is a subquery that contains a reference to a table (in the parent query) that also appears in the outer query. MySQL evaluates from inside to outside.
+- A _correlated subquery_ is a subquery that contains a reference to a table that also appears in the outer query.
 
 	[<img src="images/mysql-corellated-subquery.png" />](mysql-corellated-subquery.png)
 
@@ -118,4 +119,21 @@ References
 
 ## Materials
  [Powerpoint]
+
+
+## Take Notes
+
+Difference between INNER and CROSS Join
+
+- An **INNER JOIN** returns only the rows that have matching values in both tables based on a specified condition.
+	 *Characteristics*
+		- **Condition-Based:** Requires a join condition (typically using `ON` or `USING` clauses) to determine how rows from one table relate to rows in another.
+		- **Result Set:** Includes only the rows where the join condition is satisfied in both tables.
+		- **Usage Scenario:** When you need to retrieve related data that exists in both tables.
+		  
+- A **CROSS JOIN** returns the Cartesian product of the two tables involved, meaning it combines each row of the first table with every row of the second table.
+	*Characteristics:*
+		-  **No Condition-Based:** Does not require a join condition; it simply pairs all rows from both tables.
+		- **Result Set:** Includes all possible combinations of rows from the two tables.
+		- **Usage Scenario:** When you need to generate all possible combinations, such as creating test data or pairing every item with every other item.
 
