@@ -194,7 +194,7 @@ These types of subqueries provide powerful ways to break down complex queries by
 
 
 ## Materials
- [Powerpoint]
+ [PowerPoint Presentation]()
 
 ## Take Notes
 
