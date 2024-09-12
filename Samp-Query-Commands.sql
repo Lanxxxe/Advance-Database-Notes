@@ -6,6 +6,7 @@ INNER JOIN Authors ON Books.author_id = Authors.author_id;
 -- This query fetches the book titles and their respective authors, only where the book has a corresponding author in the Authors table
 
 
+
 -- LEFT JOIN
 -- Retrieves all records from the left table and the matched records from the right table. If there's no match, NULL is returned from the right table.
 SELECT Books.book_title, Orders.quantity
@@ -101,6 +102,12 @@ GROUP BY author_name;
 -- This query calculates the average price of books for each author by using a subquery in the FROM clause to derive a temporary table of book prices
 
 
+use bookstoredb;
+
+select * from authors;
+select * from books;
+select * from orders;
+
 
 -- For example on Difference between INNER and CROSS Join 
 SELECT Books.book_title, Authors.author_name
@@ -110,6 +117,7 @@ INNER JOIN Authors ON Books.author_id = Authors.author_id;
 -- Scenario Outcome:
 -- Books without an Author: If a book does not have an author_id that matches any author_id in the Authors table, it will not appear in the result.
 -- Authors without Books: Authors who haven't written any books will also be excluded from the result.
+
 
 
 SELECT Books.book_title, Authors.author_name

@@ -45,6 +45,7 @@ To enhance your SQL skills, you can practice using fun and interactive SQL games
 
 - [SQL Island](https://sql-island.informatik.uni-kl.de) – In this adventure game, you're stranded on [SQL island](http://wwwlgis.informatik.uni-kl.de/extra/game/?lang=en) after a tragic plane crash, and have to use your SQL skills to find a way to escape the island.
 - [SQLZoo](https://sqlzoo.net/) – A great place to practice SQL queries with interactive tutorials.
+- [Lost at SQL](https://lost-at-sql.therobinlord.com/) - A _SQL_ learning game by Robin Lord to help you pick up basic _SQL_ skills
 
 These resources can help you improve your SQL querying abilities in a fun and engaging way!
 ## How to Use This Repository
