@@ -59,4 +59,11 @@ git clone https://github.com/your-username/advanced-database-systems.git
 2. Navigate through the folders to find lecture notes, assignments, and other resources.
     
 3. Follow along with the course or use the notes for review.
+## Contributing
+
+If you'd like to contribute to the repository, feel free to fork the project and create pull requests with additional notes, corrections, or new resources. Please make sure your contributions adhere to the course structure.
+
+## License
+
+This repository is open for educational purposes. You are free to use, modify, and distribute the materials provided.
 
