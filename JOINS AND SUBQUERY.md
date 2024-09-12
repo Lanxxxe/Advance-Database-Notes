@@ -55,6 +55,7 @@ MySQL supports the `JOIN` syntax for the _`table_references`_ part of [`SEL
 - The `CROSS JOIN` keyword returns all matching records from both tables whether the other table matches or not. So, if there are rows in "Customers" that do not have matches in "Orders", or if there are rows in "Orders" that do not have matches in "Customers", those rows will be listed as well.
 - If you add a `WHERE` clause (if table1 and table2 has a relationship), the `CROSS JOIN` will produce the same result as the `INNER JOIN` clause
 	- `CROSS JOIN` can potentially return very large result-sets!
+ 
 [<img src="images/full-outer-join.png" />](full-outer-join.png)
 ##### Use Case
 
